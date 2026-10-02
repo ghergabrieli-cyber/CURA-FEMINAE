@@ -12,4 +12,5 @@ Website pentru proiectul medical **CURA FEMINAE** din Constanța — centru pent
 
 ## Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fghergabrieli-cyber%2FCURA-FEMINAE&project-name=cura-feminae&repository-name=CURA-FEMINAE)
+Repository-ul este pregătit pentru import direct în Vercel ca proiect Next.js din GitHub:
+`ghergabrieli-cyber/CURA-FEMINAE`.
