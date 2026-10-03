@@ -12,14 +12,18 @@ const sections=[
 
 export default function Home(){
   return <main><SiteHeader/>
-    <section className="hero">
-      <img src={exterior} alt="Vizualizare conceptuală CURA FEMINAE"/>
-      <div className="heroOverlay"/>
-      <div className="shell heroCopy">
-        <p className="kicker">CURA FEMINAE · CONSTANȚA</p>
-        <h1>Sănătatea ei,<br/>în fiecare etapă.</h1>
-        <p className="lead">Ginecologie și obstetrică într-un centru construit în jurul continuității, explicațiilor clare și respectului pentru pacientă.</p>
-        <div className="actions"><Link className="button filled" href="/programare">Programare</Link><Link className="button outline" href="/despre">Descoperă centrul</Link></div>
+    <section className="heroSplit">
+      <div className="shell heroSplitGrid">
+        <div className="heroText">
+          <p className="kicker">CURA FEMINAE · CONSTANȚA</p>
+          <h1>Sănătatea ei,<br/>în fiecare etapă.</h1>
+          <p className="lead">Ginecologie și obstetrică într-un centru construit în jurul continuității, explicațiilor clare și respectului pentru pacientă.</p>
+          <div className="actions"><Link className="button filled" href="/programare">Programare</Link><Link className="button outline" href="/despre">Descoperă centrul</Link></div>
+        </div>
+        <figure className="heroImage">
+          <img src={exterior} alt="Vizualizare conceptuală CURA FEMINAE"/>
+          <figcaption>Vizualizare conceptuală</figcaption>
+        </figure>
       </div>
     </section>
 
