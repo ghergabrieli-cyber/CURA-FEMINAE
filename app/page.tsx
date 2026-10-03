@@ -8,7 +8,7 @@ import hallway from "./assets/hallway";
 
 const continuum = [
   ["01", "Prevenție", "Consultații, educație și orientare medicală adaptate etapei de viață."],
-  ["02", "Preconcepție", "Pregătire și evaluare înaintea unei sarcini, în limitele competențelor medicale."],
+  ["02", "Preconcepție", "Pregătire și evaluare înaintea unei sarcini."],
   ["03", "Sarcină", "Urmărire structurată, informație clară și continuitate între vizite."],
   ["04", "După naștere", "Control postpartum și orientare către servicii conexe atunci când sunt indicate."],
   ["05", "De-a lungul vieții", "Sănătatea femeii privită dincolo de un singur episod medical."],
@@ -26,7 +26,7 @@ const services = [
 const plannedTeam = [
   "Recepție și suport pentru paciente",
   "Specialiști în recuperare și sănătatea planșeului pelvin",
-  "Colaboratori pentru servicii conexe, după contractare",
+  "Colaboratori pentru servicii conexe",
   "Personal administrativ și de igienă",
 ] as const;
 
@@ -54,7 +54,7 @@ export default function Home() {
     <main>
       <div className="development">
         <strong>PROIECT ÎN DEZVOLTARE</strong>
-        <span>Serviciile, echipa și programările vor fi publicate după autorizare și deschidere.</span>
+        <span>CURA FEMINAE · Constanța</span>
       </div>
 
       <header className="header">
@@ -65,13 +65,17 @@ export default function Home() {
             <small>Centru pentru sănătatea femeii</small>
           </span>
         </a>
-        <nav>
+
+        <nav className="mainNav" aria-label="Navigație principală">
+          <a href="#acasa">Acasă</a>
           <a href="#concept">Cura Feminae</a>
           <a href="#servicii">Servicii</a>
-          <a href="#marc">Marc Anton Cruceanu</a>
-          <a href="#spatiu">Spațiul</a>
-          <a href="#contact">Programare</a>
+          <a href="#sarcina">Sarcină</a>
+          <a href="#marc">Dr. Marc</a>
+          <a href="#spatiu">Spațiul clinicii</a>
+          <a className="navCta" href="#contact">Programare</a>
         </nav>
+
         <div className="lang"><b>RO</b><span>EN</span></div>
       </header>
 
@@ -79,15 +83,15 @@ export default function Home() {
         <img src={exterior} alt="Vizualizare conceptuală a centrului CURA FEMINAE" />
         <div className="heroOverlay" />
         <div className="shell heroCopy">
-          <p className="kicker light">CURA FEMINAE · CONSTANȚA</p>
+          <p className="kicker">CURA FEMINAE · CONSTANȚA</p>
           <h1>Sănătatea ei,<br />în fiecare etapă.</h1>
           <p className="lead">
-            Un proiect medical construit în jurul continuității îngrijirii,
-            informației clare și unei experiențe respectuoase pentru pacientă.
+            Un centru pentru sănătatea femeii construit în jurul continuității,
+            informației clare și unei experiențe medicale calme, atente și respectuoase.
           </p>
           <div className="actions">
             <a className="button filled" href="#contact">Programare</a>
-            <a className="button outline" href="#concept">Descoperă proiectul</a>
+            <a className="button outline" href="#concept">Descoperă Cura Feminae</a>
           </div>
           <p className="conceptNote">Vizualizare conceptuală. Spațiul final poate diferi.</p>
         </div>
@@ -95,18 +99,19 @@ export default function Home() {
 
       <section className="shell intro" id="concept">
         <div>
-          <p className="kicker">O ABORDARE ÎN CONTINUITATE</p>
+          <p className="kicker">CURA FEMINAE</p>
           <h2>Nu doar o consultație.<br />Un parcurs medical coerent.</h2>
         </div>
         <div className="bodyCopy">
           <p>
-            CURA FEMINAE este gândit ca un centru pentru sănătatea femeii în care
-            prevenția, sarcina, perioada postpartum și nevoile medicale din
-            diferite etape ale vieții sunt privite într-o logică de continuitate.
+            CURA FEMINAE este gândit ca un centru în care prevenția, sarcina,
+            perioada postpartum și sănătatea femeii de-a lungul vieții sunt privite
+            într-o logică de continuitate.
           </p>
           <p>
-            Proiectul este în dezvoltare. Fiecare serviciu va fi publicat numai
-            după confirmarea cadrului profesional, a autorizărilor și a resurselor necesare.
+            Proiectul pornește de la o idee simplă: pacienta trebuie să înțeleagă
+            ce se întâmplă, care sunt pașii următori și unde poate găsi sprijinul
+            potrivit atunci când are nevoie de el.
           </p>
         </div>
       </section>
@@ -132,11 +137,11 @@ export default function Home() {
           <figcaption>Vizualizare conceptuală</figcaption>
         </figure>
         <div className="featureText">
-          <p className="kicker">DIRECȚII MEDICALE PLANIFICATE</p>
-          <h2>Servicii construite în jurul pacientei.</h2>
+          <p className="kicker">SERVICII</p>
+          <h2>Îngrijire clară, într-un singur parcurs.</h2>
           <p>
-            Lista finală va fi publicată la deschidere, după confirmarea exactă
-            a competențelor, echipamentelor, autorizațiilor și fluxurilor medicale.
+            CURA FEMINAE va reuni servicii de ginecologie, obstetrică, ecografie,
+            prevenție și urmărire postpartum, cu informații ușor de înțeles pentru pacientă.
           </p>
           <ul>
             {services.map((service) => <li key={service}>{service}</li>)}
@@ -144,22 +149,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pregnancy" id="sarcina">
+        <div className="shell pregnancyGrid">
+          <div className="pregnancyText">
+            <p className="kicker">SARCINĂ</p>
+            <h2>Urmărire, explicații și continuitate.</h2>
+            <p>
+              Monitorizarea sarcinii este gândită ca un parcurs, nu ca o succesiune
+              de vizite fără legătură între ele. Consultațiile, ecografiile și pașii
+              următori sunt explicate clar, cu loc pentru întrebări și decizii informate.
+            </p>
+            <a className="textLink" href="#contact">Programări — în curând →</a>
+          </div>
+          <figure className="pregnancyPhoto">
+            <img src={waiting} alt="Vizualizare conceptuală CURA FEMINAE" />
+            <figcaption>Vizualizare conceptuală</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="doctor" id="marc">
         <div className="shell doctorGrid">
           <div>
-            <p className="kicker light">NUCLEUL MEDICAL AL PROIECTULUI</p>
-            <h2>Marc Anton Cruceanu</h2>
+            <p className="kicker light">DR. MARC ANTON CRUCEANU</p>
+            <h2>Practica medicală din centrul CURA FEMINAE.</h2>
             <p className="role">Obstetrică-Ginecologie</p>
           </div>
           <div className="doctorText">
             <p>
-              CURA FEMINAE este conceput ca o practică în care Marc Anton Cruceanu
-              va fi singurul medic obstetrician-ginecolog al centrului.
+              Dr. Marc Anton Cruceanu este medicul ginecolog al clinicii CURA FEMINAE.
+              Centrul este construit în jurul practicii lui medicale și al unei relații
+              cu pacienta bazate pe explicații clare, respect și continuitate.
             </p>
             <p>
-              Profilul profesional complet — formare, statut profesional,
-              competențe și certificări — va fi publicat pe baza documentelor
-              actualizate înainte de lansarea serviciilor.
+              Profilul profesional complet, formarea și certificările vor fi prezentate
+              în pagina dedicată înainte de lansarea clinicii.
             </p>
           </div>
         </div>
@@ -167,12 +191,12 @@ export default function Home() {
 
       <section className="shell team">
         <div className="sectionHeading">
-          <p className="kicker">STRUCTURA PLANIFICATĂ</p>
-          <h2>O echipă care se construiește etapizat.</h2>
+          <p className="kicker">ECHIPA CURA FEMINAE</p>
+          <h2>Un centru care se construiește etapizat.</h2>
           <p>
-            În prezent, CURA FEMINAE nu are angajați sau colaboratori oficiali.
-            Rolurile de mai jos reprezintă structura planificată după finanțare,
-            autorizare și recrutare.
+            Marc va fi singurul medic obstetrician-ginecolog al centrului. După finanțare,
+            autorizare și recrutare, CURA FEMINAE va include și personal de recepție,
+            specialiști în recuperare și alți colaboratori relevanți pentru îngrijirea pacientei.
           </p>
         </div>
         <div className="roles">
@@ -193,8 +217,8 @@ export default function Home() {
           </div>
           <div className="visitList">
             <div><b>Programare</b><p>Online sau asistată, după lansarea centrului.</p></div>
-            <div><b>Pregătire</b><p>Informații clare despre documente și pregătirea necesară.</p></div>
-            <div><b>Consultație</b><p>Discuție, evaluare și explicații, cu accent pe consimțământ și confidențialitate.</p></div>
+            <div><b>Pregătire</b><p>Informații simple despre documente și pregătirea necesară.</p></div>
+            <div><b>Consultație</b><p>Discuție, evaluare și explicații într-un cadru discret și respectuos.</p></div>
             <div><b>Continuitate</b><p>Pașii următori și follow-up-ul sunt explicate înainte de încheierea vizitei.</p></div>
           </div>
         </div>
@@ -204,12 +228,12 @@ export default function Home() {
         <div className="accessCard">
           <div>
             <p className="kicker">ACCESIBILITATE</p>
-            <h2>Accesul nu este un detaliu de design.</h2>
+            <h2>Accesul face parte din experiența medicală.</h2>
           </div>
           <p>
-            Proiectarea spațiului urmărește circulație clară, intimitate,
-            soluții pentru mobilitate redusă și opțiuni de comunicare accesibile.
-            Specificațiile finale vor fi publicate după amenajarea spațiului real.
+            Spațiul este proiectat cu circulație clară, intimitate și soluții pentru
+            mobilitate redusă. Detaliile finale de accesibilitate vor fi publicate
+            după amenajarea spațiului real.
           </p>
         </div>
       </section>
@@ -217,11 +241,10 @@ export default function Home() {
       <section className="gallery" id="spatiu">
         <div className="shell">
           <div className="sectionHeading">
-            <p className="kicker">SPAȚIUL CURA FEMINAE</p>
+            <p className="kicker">SPAȚIUL CLINICII</p>
             <h2>Clinic, calm și discret.</h2>
             <p>
-              Imaginile sunt vizualizări conceptuale ale proiectului și nu
-              reprezintă fotografii ale unui centru deja deschis.
+              Imaginile sunt vizualizări conceptuale ale proiectului CURA FEMINAE.
             </p>
           </div>
           <div className="galleryGrid">
@@ -237,13 +260,12 @@ export default function Home() {
 
       <section className="shell innovation">
         <div className="sectionHeading">
-          <p className="kicker">DEZVOLTARE ȘI COLABORĂRI</p>
-          <h2>Un centru pregătit să crească responsabil.</h2>
+          <p className="kicker">DEZVOLTARE</p>
+          <h2>Un centru pregătit să crească.</h2>
           <p>
-            Digitalizarea, colaborările cu specialiști, recuperarea postpartum
-            și eventuale proiecte de cercetare sau FemTech pot fi dezvoltate
-            etapizat. Nicio colaborare și nicio capacitate nu este prezentată
-            ca existentă înainte de a fi contractată și autorizată.
+            Pe măsură ce proiectul se dezvoltă, CURA FEMINAE poate integra recuperare
+            postpartum, servicii conexe, instrumente digitale și colaborări medicale
+            sau academice relevante.
           </p>
         </div>
       </section>
@@ -256,8 +278,8 @@ export default function Home() {
           </div>
           <div>
             <p>
-              Adresa, programul, telefonul și formularul de programare vor fi
-              publicate după stabilirea spațiului și finalizarea autorizărilor.
+              Adresa, programul, telefonul și formularul de programare vor apărea aici
+              imediat ce spațiul și data deschiderii sunt stabilite.
             </p>
             <button disabled>Programări — în curând</button>
           </div>
