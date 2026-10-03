@@ -3,10 +3,11 @@ import Link from "next/link";
 export function Mark(){
   return (
     <svg viewBox="0 0 64 64" aria-hidden="true" className="mark">
-      <path d="M32 54C21 45 17 33 20 20c7 3 12 9 12 19"/>
-      <path d="M32 54C43 45 47 33 44 20c-7 3-12 9-12 19"/>
-      <path d="M32 54C25 42 25 26 32 10c7 10 8 22 4 33"/>
-      <path d="M20 20c6 2 10 6 12 12M44 20c-6 2-10 6-12 12"/>
+      <path d="M32 55C30 44 29 27 32 11C38 18 42 27 42 36C42 45 38 51 32 55Z"/>
+      <path d="M31 55C21 51 15 41 15 27C22 27 28 31 32 37"/>
+      <path d="M33 55C43 51 49 41 49 27C42 27 36 31 32 37"/>
+      <path d="M23 31C22 40 25 48 32 55"/>
+      <path d="M41 31C42 40 39 48 32 55"/>
     </svg>
   );
 }
